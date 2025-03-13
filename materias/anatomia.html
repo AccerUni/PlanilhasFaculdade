@@ -64,10 +64,25 @@
 
     <div class="container">
         <h1>Anatomia</h1>
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkPBvOAa8KEPD62R0wrvPZh9qePKFskG5YJc-urVCPRcZOuRidv31lYb0GFTqD4fWgE3rLmD1Q2QDE/pubhtml?gid=871234383&amp;single=true&amp;widget=true&amp;headers=false" + new Date().getTime()></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkPBvOAa8KEPD62R0wrvPZh9qePKFskG5YJc-urVCPRcZOuRidv31lYb0GFTqD4fWgE3rLmD1Q2QDE/pubhtml?gid=871234383&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
         <br>
         <a href="../index.html" class="btn">Voltar</a>
     </div>
 
+    <script>
+        function atualizarIframe() {
+            var iframe = document.getElementById("planilhaFrame");
+            var url = new URL(iframe.src); // Cria um objeto URL a partir da URL do iframe
+            var timestamp = new Date().getTime(); // Gera um timestamp
+
+            // Adiciona o timestamp como um parâmetro sem remover outros parâmetros
+            url.searchParams.set('t', timestamp);
+
+            // Atualiza a URL do iframe com o timestamp
+            iframe.src = url.toString();
+        }
+
+        setInterval(atualizarIframe, 7000); // Atualiza a cada 7 segundos
+    </script>
 </body>
 </html>
