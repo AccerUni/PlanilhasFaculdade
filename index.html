@@ -3,154 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organização das Aulas - Fisioterapia</title>
+    <title>Organização das Aulas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
             margin: 0;
             padding: 0;
-            position: relative;
-            overflow: hidden;
+            color: #2C3E50;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        /* Animação do fundo com ossos */
-        @keyframes moverOssos {
+        .container-fluid {
+            flex: 1;
+        }
+        /* Animação de fundo */
+        @keyframes fundoAnimado {
             0% { background-position: 0 0; }
-            50% { background-position: 0 20px; }
+            50% { background-position: 50px 50px; }
             100% { background-position: 0 0; }
         }
         body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('imagens/ossos.jpg');
-            background-size: 150px;
-            background-repeat: repeat;
-            opacity: 0.1;
+            background-image: url('imagens/fundo-medicina.png');
+            background-size: 250px;
+            opacity: 0.15;
             z-index: -1;
-            animation: moverOssos 5s infinite linear alternate;
+            animation: fundoAnimado 10s infinite linear alternate;
         }
-        /* Cabeçalho */
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        /* Navbar */
+        .navbar {
+            background: #1565C0;
         }
-        .logo {
-            position: absolute;
-            left: 20px;
-            width: 50px;
+        .navbar a {
+            color: white !important;
         }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        .btn {
+        /* Botões das matérias */
+        .btn-materia {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            background: #E3F2FD;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
             text-decoration: none;
-            color: black;
+            color: #2C3E50;
             font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.3s;
         }
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+        .btn-materia:hover {
+            transform: scale(1.08);
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
         }
-        .btn img {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
+        .btn-materia img {
+            width: 90px;
+            height: 90px;
+            border-radius: 15px;
             margin-bottom: 10px;
         }
         /* Rodapé */
         footer {
-            background: #007BFF;
+            background: #1565C0;
             color: white;
-            padding: 10px;
-            margin-top: 20px;
-        }
-        /* Botão invisível para o admin */
-        .admin-button {
-            position: fixed;
-            bottom: 5px;
-            left: 5px;
-            width: 10px;
-            height: 10px;
-            opacity: 0;
-            cursor: pointer;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="imagens/logo.jpg" alt="Logo Fisioterapia" class="logo">
-        <h1>Minhas Matérias - Fisioterapia</h1>
-    </header>
-    <div class="container">
-        <a href="materias/anatomia.html" class="btn">
-            <img src="imagens/anatomia.avif" alt="Anatomia">
-            Anatomia
-        </a>
-        <a href="materias/bioquimica.html" class="btn">
-            <img src="imagens/bioquimica.png" alt="Bioquímica">
-            Bioquímica
-        </a>
-        <a href="materias/fisiologia.html" class="btn">
-            <img src="imagens/fisiologia.jpg" alt="Matéria 3">
-            Fisiologia
-        </a>
-        <a href="materias/cinesiologia.html" class="btn">
-            <img src="imagens/cinesiologia.png" alt="Matéria 4">
-            Cinesiologia
-        </a>
-        <a href="materias/bases.html" class="btn">
-            <img src="imagens/materia5.jpg" alt="Matéria 5">
-            Bases
-        </a>
-        <a href="materias/materia6.html" class="btn">
-            <img src="imagens/materia6.jpg" alt="Matéria 6">
-        
-        </a>
-        <a href="materias/materia7.html" class="btn">
-            <img src="imagens/materia7.jpg" alt="Matéria 7">
-            
-        </a>
-        <a href="materias/materia8.html" class="btn">
-            <img src="imagens/materia8.jpg" alt="Matéria 8">
-            
-        </a>
-        <a href="materias/materia9.html" class="btn">
-            <img src="imagens/materia9.jpg" alt="Matéria 9">
-            
-        </a>
-        <a href="materias/materia10.html" class="btn">
-            <img src="imagens/materia10.jpg" alt="Matéria 10">
-            
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Organização das Aulas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid text-center py-5">
+        <h1 class="mb-4">Minhas Futuras Matérias</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col"><a href="materias/anatomia.html" class="btn-materia"><img src="imagens/anatomia.avif" alt="Anatomia">Anatomia</a></div>
+            <div class="col"><a href="materias/bioquimica.html" class="btn-materia"><img src="imagens/bioquimica.png" alt="Bioquímica">Bioquímica</a></div>
+            <div class="col"><a href="materias/fisiologia.html" class="btn-materia"><img src="imagens/fisiologia.jpg" alt="Fisiologia">Fisiologia</a></div>
+            <div class="col"><a href="materias/cinesiologia.html" class="btn-materia"><img src="imagens/cinesiologia.png" alt="Cinesiologia">Cinesiologia</a></div>
+            <div class="col"><a href="materias/bases.html" class="btn-materia"><img src="imagens/materia5.jpg" alt="Bases">Bases</a></div>
+        </div>
     </div>
+    
     <footer>
-        <p>&copy; 2025 Organização das Aulas - Fisioterapia</p>
+        <p>&copy; 2025 Organização das Aulas</p>
     </footer>
-
-    <a href="https://pablofelipe13.github.io/PlanilhaAutentica-o/" class="admin-button"></a>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
